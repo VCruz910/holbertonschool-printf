@@ -7,55 +7,49 @@
  *
  */
 
-int print_string(va_list ptr)
-{	
-	char storage;
-	int idx;
-	storage = var_arg(ptr, int)
-
-	if (storage != NULL)
-	{
-		for (idx =0, storage[idx] != ‘\0’ idx++)
-		{
-			_putchar(storage[idx]);
-		}
-		return (idx);
-	{
-}
-
-
-/*
- *
- *
- *
- *
- */
-int print_char(va_list ptr)
-{	
-	char storage;
-	storage = var_arg(ptr,int);
-
-	if (storage != NULL)
-	{
-		_putchar(storage);
-	{
-	return (1);
-}
-
-/*
- *
- *
- *
- */
-int print_integer(va_list ptr)
+int print_string(va_list s)//list of arguments 
 {
-	int storage;
+	char *storage = va_arg(s, char *);//a string is an array of characters
 	int idx;
-	storage = var_arg(ptr, int);
 
-	if (storage != NULL)
+	if (storage == NULL)
 	{
-		putchar (storage);
+		storage = "(null)";
 	}
+
+	for (idx = 0; storage[idx] != ‘\0’; idx++)
+	{
+		_putchar(storage[idx]);
+	}
+	return (idx);
+
+	
+}
+
+
+/*
+ *
+ *
+ *
+ *
+ */
+int print_char(va_list c)
+{	
+	char storage = va_arg(c, int);
+
+	_putchar(storage);
 	return (1);
 }
+
+/*
+ *
+ *
+ *
+ */
+int print_integer(va_list in)
+{
+	int idx;
+	int storage = va_arg(in, int);
+		
+}
+\\considerar: numeros negativo- imprimir simbolo negativo y num negativo ; si el numero es = 0 ; limite de cuantos numeros hay ; 
