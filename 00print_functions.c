@@ -40,14 +40,14 @@ int print_char(va_list ptr)
 		_putchar(storage);
 	{
 	return (1);
-{
+}
 
 /*
  *
  *
  *
  */
-int print_int(va_list ptr)
+int print_integer(va_list ptr)
 {
 	int storage;
 	int idx;
