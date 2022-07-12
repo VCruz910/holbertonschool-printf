@@ -26,7 +26,8 @@ int _printf(const char *format, ...)
 	va_start(ptr, format);
 	if (ptr == NULL || format == NULL)
 		return (-1);
-
+	if (format[0] == '%' && format[1] == '\0')
+		return (-1);
 	/**
 	 *for (idx = 0, idx2 = 0; format[idx] != NULL && idx2 < 4; idx++, idx2++)
 	 *{
