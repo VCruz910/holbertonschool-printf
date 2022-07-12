@@ -55,7 +55,7 @@ int print_integer(va_list ptr)
 
 	if (storage != NULL)
 	{
-		putchar (storage);
+		_putchar(storage);
 	}
 	return (1);
 }
