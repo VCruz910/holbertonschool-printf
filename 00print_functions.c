@@ -51,5 +51,11 @@ int print_integer(va_list in)
 	int idx;
 	int storage = va_arg(in, int);
 		
+
+	if (storage != NULL)
+	{
+		_putchar(storage);
+	}
+	return (1);
 }
 \\considerar: numeros negativo- imprimir simbolo negativo y num negativo ; si el numero es = 0 ; limite de cuantos numeros hay ; 
