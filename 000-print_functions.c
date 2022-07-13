@@ -1,12 +1,12 @@
 #include "main.h"
 
-/*
+/**
  * print_string - prints a string
  *
  * @s: argument pointer
  *
  * Return: count of numbers printed
- */
+ **/
 
 int print_string(va_list s)
 {
@@ -28,16 +28,15 @@ int print_string(va_list s)
 }
 
 
-/*
- *
+/**
  * print_char - prints a character
  *
  * @c: argument pointer
  *
  * Return: count of numbers printed
- */
+ **/
 int print_char(va_list c)
-{	
+{
 	char storage = va_arg(c, int);
 
 	_putchar(storage);
@@ -50,7 +49,7 @@ int print_char(va_list c)
  * @d: argument pointer
  *
  * Return: count of numbers printed
- */
+ **/
 int print_digits(va_list d)
 {
 	int num = va_arg(d, int);
@@ -66,7 +65,7 @@ int print_digits(va_list d)
  * @n: number to be printed
  *
  * Return: count of numbers printed
- */
+ **/
 int print_integer(int n)
 {
 	int idx = 1;
