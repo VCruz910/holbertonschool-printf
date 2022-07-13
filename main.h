@@ -25,6 +25,12 @@ typedef struct types
   int (*f)(va_list ptr);
 } escoge_t;
 
+/**
+*typedef struct counting
+*{
+*  register int count = 0;
+*} count_t;
+**/
 
 /*Prototypes (Mandatory Tasks)*/
 /*Main Prototype*/
