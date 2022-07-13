@@ -31,10 +31,10 @@ typedef struct types
 int _printf(const char *format, ...);
 
 /*Made Prototypes (by Angeira and Victor)*/
-int print_char(va_list ptr);
-int print_string(va_list ptr);
-int print_in(va_list ptr);
-
+int print_char(va_list c);
+int print_string(va_list s);
+int print_integer(int n);
+int print_digits(va_list d);
 int _putchar(char c);
 
 #endif
