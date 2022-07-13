@@ -14,16 +14,27 @@
 #include <string.h>
 #include <time.h>
 #include <stdarg.h>
-#include <stdout.h>
+#include <unistd.h>
 
 /*Struct*/
+/*Struct for choosing printf type*/
+
+typedef struct types
+{
+  char *data;
+  int (*f)(va_list ptr);
+} escoge_t;
 
 
 /*Prototypes (Mandatory Tasks)*/
+/*Main Prototype*/
 int _printf(const char *format, ...);
+
+/*Made Prototypes (by Angeira and Victor)*/
+int print_char(va_list ptr);
+int print_string(va_list ptr);
+int print_in(va_list ptr);
+
 int _putchar(char c);
-
-/*Prototypes (Vic / Ang Created)*/
-
 
 #endif
