@@ -22,7 +22,7 @@ _printf.c:`int _printf(const char *format, ...);`
 - Our project required a function capable of printing with the `%d`, `%c`, `%s`, and `%%` specifiers to standard output. 
 - `printf` returns the number of characters printed (excluding the null byte at the end of strings). 
 
-##Requirements
+## Requirements
 
 - Allowed editors: `vi`, `vim`, `emacs`
 - All your files will be compiled on Ubuntu 20.04 LTS using `gcc`, using the options `-Wall -Werror -Wextra -pedantic -std=gnu89`
@@ -81,12 +81,16 @@ Output
 
 
     int main(void)
-{
+    {
     int len;
     int len2;
     unsigned int ui;
     void *addr;
 
+    int len;
+    int len2;
+    unsigned int ui;
+    void *addr;
     len = _printf("Let's try to printf a simple sentence.\n");
     len2 = printf("Let's try to printf a simple sentence.\n");
     ui = (unsigned int)INT_MAX + 1024;
@@ -114,7 +118,7 @@ Output
     _printf("Unknown:[%r]\n");
     printf("Unknown:[%r]\n");
     return (0);
-}
+    }
     
        
 		      
