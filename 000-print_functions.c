@@ -58,18 +58,18 @@ int print_digits(va_list d)
 	int num = va_arg(d, int); 
 	int idx = 0;
 
-	idx += print_int(num);
+	idx += print_integer(num);
 	return (idx);
 }
 
 /**
- * print_in - prints  integer
+ * print_integer - prints  integer
  *
  * @n: number to be printed
  *
  * Return: count of numbers printed
  */
-int print_in(int n)
+int print_integer(int n)
 {
 	int idx = 1;
 	unsigned int num = 0;
@@ -86,7 +86,7 @@ int print_in(int n)
 	}
 	if (num / 10)
 	{
-		idx += print_in(num / 10);
+		idx += print_integer(num / 10);
 	}
 	_putchar((num % 10) + 48);
 	return (idx);
