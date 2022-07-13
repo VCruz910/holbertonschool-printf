@@ -15,8 +15,8 @@ int _printf(const char *format, ...)
 	escoge_t option[] = {
 		{"c", print_char},
 		{"s", print_string},
-		{"d", print_in},
-		{"i", print_in},
+		{"d", print_digits},
+		{"i", print_digits},
 		{'\0', NULL}
 	};
 
@@ -28,13 +28,20 @@ int _printf(const char *format, ...)
 
 	for (idx = 0; *(format + idx) != '\0'; idx++)
 	{
-		for(idx2 = 0; idx2 < 4; idx2++)
+		if (format[idx] == '%')
 		{
-			if(*(format + idx) == *(option[idx2].data))
-				option[idx2].f(ptr);
+			format[idx]++;
+			for(idx2 = 0; idx2 < 4; idx2++)
+			{
+				if(*(format + (idx + 1)) == *(option[idx2].data))
+				{
+					option[idx2].f(ptr);
+				}
+			}
 		}
+		_putchar(format[idx]);
 	}
-	_putchar('\n');
+	/*_putchar('\n');*/
 	va_end(ptr);
 	return (0);
 }
