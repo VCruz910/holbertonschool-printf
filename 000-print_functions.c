@@ -2,9 +2,9 @@
 
 /*
  * print_string - prints a string
- * 
+ *
  * @s: argument pointer
- * 
+ *
  * Return: count of numbers printed
  */
 
@@ -18,7 +18,7 @@ int print_string(va_list s)
 		storage = "(null)";
 	}
 
-	for (idx = 0; storage[idx] != ‘\0’; idx++)
+	for (idx = 0; storage[idx] != '\0'; idx++)
 	{
 		_putchar(storage[idx]);
 	}
@@ -32,7 +32,7 @@ int print_string(va_list s)
  *
  * print_char - prints a character
  *
- * @c: argument pointer 
+ * @c: argument pointer
  *
  * Return: count of numbers printed
  */
@@ -53,7 +53,7 @@ int print_char(va_list c)
  */
 int print_digits(va_list d)
 {
-	int num = va_arg(d, int); 
+	int num = va_arg(d, int);
 	int idx = 0;
 
 	idx += print_integer(num);
