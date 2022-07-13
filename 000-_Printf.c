@@ -30,7 +30,6 @@ int _printf(const char *format, ...)
 	{
 		if (format[idx] == '%')
 		{
-			format[idx]++;
 			for(idx2 = 0; idx2 < 4; idx2++)
 			{
 				if(*(format + (idx + 1)) == *(option[idx2].data))
