@@ -17,20 +17,16 @@
 #include <unistd.h>
 
 /*Struct*/
-/*Struct for choosing printf type*/
-
+/**
+ * struct types - Choses type to print.
+ * @data: Data type.
+ * @f: Function type.
+ **/
 typedef struct types
 {
-  char *data;
-  int (*f)(va_list ptr);
+char *data;
+int (*f)(va_list ptr);
 } escoge_t;
-
-/**
-*typedef struct counting
-*{
-*  register int count = 0;
-*} count_t;
-**/
 
 /*Prototypes (Mandatory Tasks)*/
 /*Main Prototype*/
