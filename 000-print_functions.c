@@ -8,9 +8,9 @@
  * Return: count of numbers printed
  */
 
-int print_string(va_list s)//list of arguments 
+int print_string(va_list s)
 {
-	char *storage = va_arg(s, char *);//a string is an array of characters
+	char *storage = va_arg(s, char *);
 	int idx;
 
 	if (storage == NULL)
@@ -24,7 +24,7 @@ int print_string(va_list s)//list of arguments
 	}
 	return (idx);
 
-	
+
 }
 
 
@@ -44,15 +44,13 @@ int print_char(va_list c)
 	return (1);
 }
 
-\\considerar: numeros negativo- imprimir simbolo negativo y num negativo ; si el numero es = 0 ; limite de cuantos numeros hay ; 
-
 /**
-  * print_digits - prints integer
-  *
-  * @d: argument pointer
-  *
-  * Return: count of numbers printed
-  */
+ * print_digits - prints integer
+ *
+ * @d: argument pointer
+ *
+ * Return: count of numbers printed
+ */
 int print_digits(va_list d)
 {
 	int num = va_arg(d, int); 
@@ -73,12 +71,12 @@ int print_integer(int n)
 {
 	int idx = 1;
 	unsigned int num = 0;
-	
+
 	if (n < 0)
 	{
 		_putchar('-');
 		idx++;
-	num = n * -1;
+		num = n * -1;
 	}
 	else
 	{
