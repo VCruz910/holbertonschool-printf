@@ -1,8 +1,36 @@
 #include "main.h"
 /**
+ * find_spec - Finds the specific format.
+ * @format: Format to print.
+ * @va_list: List of arguments.
+ * Return: NULL.
+ **/
+int find_spec(char format, va_list ptr)
+{
+	int idx = 0;
+
+	static escoge_t option[] = {
+		{"c", print_char},
+		{"s", print_string},
+		{"d", print_digits},
+		{"i", print_digits},
+		{NULL, NULL}
+	};
+
+	for (; idx < 4; idx++)
+	{
+		if (*(option[idx].data) == format)
+		{
+			return (option[idx].function(ptr));
+			idx++;
+		}
+	}
+	return ('\0');
+}
+/**
  * _printf - Produces output according to a format.
  * @format: Character pointer to the format.
- * Return: (0).
+ * Return: (count).
  **/
 /*_printf code by Victor and Angeira*/
 int _printf(const char *format, ...)
@@ -10,15 +38,8 @@ int _printf(const char *format, ...)
 	/*Variables*/
 	/*Var names by Angeira*/
 	va_list ptr;
-	int idx = 0, idx2 = 0;
-
-	escoge_t option[] = {
-		{"c", print_char},
-		{"s", print_string},
-		{"d", print_digits},
-		{"i", print_digits},
-		{'\0', NULL}
-	};
+	int idx = 0, count = 0;
+	int function;
 
 	/*Codes made by Victor*/
 	/*Start of our function*/
@@ -26,21 +47,25 @@ int _printf(const char *format, ...)
 	if (format == NULL || (format[0] == '%' && format[1] == '\0'))
 		return (-1);
 
-	for (idx = 0; *(format + idx) != '\0'; idx++)
+	for (; *(format + idx) != '\0'; idx++)
 	{
 		if (format[idx] == '%')
 		{
-			for (idx2 = 0; idx2 < 4; idx2++)
+			if (format[idx] == '\0')
 			{
-				if (*(format + (idx + 1)) == *(option[idx2].data))
-				{
-					option[idx2].f(ptr);
-				}
+				return (count);
+			}
+			function = find_spec(format[idx + 1], ptr);
+			if (function != '\0')
+			{
+				count = count + function;
+				idx += 2;
 			}
 		}
 		_putchar(format[idx]);
+		count++;
 	}
-	/*_putchar('\n');*/
+
 	va_end(ptr);
-	return (0);
+	return (count);
 }
