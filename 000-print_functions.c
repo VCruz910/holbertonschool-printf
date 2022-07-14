@@ -11,7 +11,7 @@
 int print_string(va_list s)
 {
 	char *storage = va_arg(s, char *);
-	int idx = 0         ;
+	int idx = 0;
 
 	while (storage[idx])
 	{
