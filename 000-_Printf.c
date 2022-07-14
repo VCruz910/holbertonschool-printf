@@ -2,7 +2,7 @@
 /**
  * find_spec - Finds the specific format.
  * @format: Format to print.
- * @va_list: List of arguments.
+ * @ptr: List of arguments.
  * Return: NULL.
  **/
 int find_spec(char format, va_list ptr)
