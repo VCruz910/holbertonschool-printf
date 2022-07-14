@@ -25,7 +25,7 @@
 typedef struct types
 {
 char *data;
-int (*f)(va_list ptr);
+int (*function)(va_list ptr);
 } escoge_t;
 
 /*Prototypes (Mandatory Tasks)*/
@@ -38,5 +38,5 @@ int print_string(va_list s);
 int print_integer(int n);
 int print_digits(va_list d);
 int _putchar(char c);
-
+int find_spec(char format, va_list ptr);
 #endif
