@@ -41,31 +41,34 @@ int _printf(const char *format, ...)
 	int idx = 0, count = 0;
 	int function;
 
-	/*Codes made by Victor*/
 	/*Start of our function*/
 	va_start(ptr, format);
-	if (format == NULL || (format[0] == '%' && format[1] == '\0'))
-		return (-1);
 
-	for (; *(format + idx) != '\0'; idx++)
+	for (; format && format[idx]; idx++)
 	{
-		if (format[idx] == '%')
+		for (; format[idx] != '\0' && format[idx] != '%'; idx++)
 		{
-			if (format[idx] == '\0')
-			{
-				return (count);
-			}
-			function = find_spec(format[idx + 1], ptr);
-			if (function != '\0')
-			{
-				count = count + function;
-				idx += 2;
-			}
+			_putchar(format[idx]);
+			count++;
 		}
-		_putchar(format[idx]);
-		count++;
-	}
 
+		if (format[idx] == '\0')
+		{
+			return (count);
+		}
+		function = find_spec(format[idx + 1], ptr);
+		if (function != '\0')
+		{
+			count = count + function;
+			idx += 1;
+		}
+		if (format[idx + 1] == '%')
+		{
+			_putchar(format[idx]);
+			count++;
+			idx++;
+		}
+	}
 	va_end(ptr);
 	return (count);
 }
