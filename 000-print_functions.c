@@ -11,16 +11,12 @@
 int print_string(va_list s)
 {
 	char *storage = va_arg(s, char *);
-	int idx;
+	int idx = 0         ;
 
-	if (storage == NULL)
-	{
-		storage = "(null)";
-	}
-
-	for (idx = 0; storage[idx] != '\0'; idx++)
+	while (storage[idx])
 	{
 		_putchar(storage[idx]);
+		idx++;
 	}
 	return (idx);
 
